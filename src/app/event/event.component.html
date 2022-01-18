@@ -1,0 +1,30 @@
+<div class="event-page">
+  <div class="container">
+    <div *ngIf="event" class="event">
+      <div *ngIf="isOwner" class="actions">
+        <a [routerLink]="['/events', event.id, 'edit']" class="btn btn-primary"
+          ><i class="fas fa-edit"></i> Edit</a
+        >
+        <button class="btn btn-danger">
+          <i class="fas fa-trash"></i> Delete
+        </button>
+      </div>
+      <img class="event-image" [src]="imgUrl(event.image)" alt="" />
+      <h1 class="name">{{ event.name }}</h1>
+      <p class="description">{{ event.description }}</p>
+      <div class="detail flex">
+        <p class="venue">
+          <i class="fas fa-map-marker-alt"></i> {{ event.venue }}
+        </p>
+        <p class="date">
+          <i class="fas fa-calender-alt"></i> {{ event.date | date: "medium" }}
+        </p>
+        <p class="time"><i class="fas fa-clock"></i> {{ event.time }}</p>
+      </div>
+      <div class="owner flex">
+        <img [src]="imgUrl(event.user.avatar)" [alt]="event.user.name" />
+        <p>{{ event.user.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

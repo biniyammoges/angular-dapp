@@ -1,0 +1,39 @@
+<div class="search">
+  <div class="container">
+    <h1>
+      Search result for : <span>{{ keyword }}</span>
+    </h1>
+    <div class="result flex">
+      <div class="events">
+        <a
+          *ngFor="let event of events"
+          class="event flex"
+          [routerLink]="['/events', event.id]"
+        >
+          <div class="image">
+            <img [src]="imgUrl(event.image)" [alt]="event.name" />
+          </div>
+          <div class="detail flex">
+            <h2>{{ event.name }}</h2>
+            <p class="description">{{ event.description | summary: 160 }}</p>
+            <div class="detail-list flex">
+              <p class="venue">
+                <i class="fas fa-map-marker-alt"></i> {{ event.venue }}
+              </p>
+              <p class="date">
+                <i class="far fa-calendar-alt"></i>
+                {{ event.date | date }}
+              </p>
+              <p class=""><i class="fas fa-clock"></i> {{ event.time }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="ads">
+        <div class="ads-link">
+          <h1>Post ads</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.event-page {
+  .btn:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .actions {
+    display: inline-block;
+    float: right;
+  }
+
+  .event {
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+
+  .event-image {
+    border-radius: 10px;
+  }
+
+  .name {
+    font-size: 40px;
+    margin: 10px 0;
+  }
+
+  .description {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .venue {
+    font-size: 18px;
+  }
+
+  .detail {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding: 10px 0;
+
+    p {
+      font-size: 18px;
+      margin-right: 20px;
+    }
+  }
+
+  .detail.flex {
+    justify-content: flex-start;
+  }
+
+  .owner {
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 3px solid #337ed7;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &.flex {
+      justify-content: flex-start;
+    }
+  }
+}

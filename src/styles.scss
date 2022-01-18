@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200&display=swap");
+
+$primary-color: #1138b8;
+$dark-color: #050e2b;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+// utils
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.alert {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: #1138b831;
+  color: #1138b8;
+}
+
+.alert-danger {
+  background-color: #f7d3d3;
+  color: #462a2a;
+}
+
+.alert-warning {
+  background-color: #ffa60027;
+  color: #222222;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: #fff;
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn-danger {
+  background-color: red;
+}

@@ -1,0 +1,38 @@
+.auth-form {
+  height: 80vh;
+
+  .form-container {
+    min-width: 370px;
+  }
+
+  form {
+    label {
+      margin: 8px 0;
+      display: block;
+    }
+
+    input {
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: block;
+      width: 100%;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      color: #fff;
+      background-color: #1138b8;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+}

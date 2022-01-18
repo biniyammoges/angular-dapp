@@ -1,0 +1,145 @@
+.add-event {
+  margin: 2rem 0;
+
+  form {
+    width: 500px;
+  }
+
+  label {
+    display: block;
+    font-size: 17px;
+    margin: 8px 0;
+    font-weight: 600;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+    outline: 0;
+
+    &:focus {
+      outline: 2px solid #1943b79d;
+    }
+
+    &.ng-touched.ng-invalid {
+      border: 1px solid rgba(212, 5, 5, 0.63);
+    }
+  }
+
+  .image-label {
+    border: 2px dashed #1943b75e;
+    background-color: #efeff7;
+    color: #333;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 20px;
+
+    i {
+      font-size: 30px;
+    }
+  }
+
+  input#image {
+    display: none;
+  }
+
+  .form-group.flex {
+    justify-content: flex-start;
+    margin: 10px 0;
+  }
+
+  .preview {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    span {
+      position: absolute;
+      background-color: rgba(14, 11, 24, 0.836);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      right: 5px;
+      top: 5px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+    outline: 0;
+
+    &:focus {
+      outline: 2px solid #1943b79d;
+    }
+
+    &.ng-touched.ng-invalid {
+      border: 1px solid rgba(212, 5, 5, 0.63);
+    }
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .timestamp.grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    background-color: #1943b7;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    margin: 10px 0;
+
+    &:disabled {
+      background-color: lighten(#1138b8, 28);
+      cursor: not-allowed;
+    }
+  }
+}

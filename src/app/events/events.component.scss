@@ -1,0 +1,53 @@
+.events {
+  margin: 1rem 0;
+
+  a {
+    color: #050e2b;
+  }
+
+  .event {
+    border-radius: 5px;
+    border: 1px solid #050e2b1c;
+    overflow: hidden;
+    max-width: 300px;
+
+    // event image
+    img {
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+
+  .event-detail {
+    padding: 0 10px;
+  }
+
+  .name {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    color: #050e2b;
+  }
+
+  .description {
+    color: #393c46;
+  }
+
+  .timestamp {
+    padding: 8px;
+    font-size: 15px;
+    white-space: nowrap;
+
+    &.flex {
+      display: inline-flex;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+
+    .date {
+      margin-right: 10px;
+    }
+  }
+}

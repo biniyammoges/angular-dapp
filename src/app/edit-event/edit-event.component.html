@@ -1,0 +1,116 @@
+<div class="add-event">
+  <div class="container flex">
+    <div>
+      <h1><i class="fas fa-edit"></i> Edit new event</h1>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div
+          *ngIf="
+            form.errors && form.errors.unknownError && form.errors.unknownError
+          "
+          class="alert alert-danger"
+        >
+          {{ form.errors.unknownError && form.errors.unknownError.msg }}
+        </div>
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input
+            type="text"
+            formControlName="name"
+            [(ngModel)]="event.name"
+            placeholder="Enter name"
+          />
+          <div *ngIf="name.touched && name.errors">
+            <div class="error" *ngIf="name.errors.required">
+              * name is required
+            </div>
+            <div class="error" *ngIf="name.errors.minlength">
+              * name should be minimum
+              {{ name.errors.minlength.requiredLength }} character long
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Venue *</label>
+          <input
+            type="text"
+            formControlName="venue"
+            placeholder="Enter venue"
+            [(ngModel)]="event.venue"
+          />
+          <div *ngIf="venue.touched && venue.errors">
+            <div class="error" *ngIf="venue.errors.required">
+              * venue is required
+            </div>
+            <div class="error" *ngIf="venue.errors.minlength">
+              * venue should be minimum
+              {{ venue.errors.minlength.requiredLength }} character long
+            </div>
+          </div>
+        </div>
+        <div class="timestamp grid">
+          <div class="form-group">
+            <label for="date">Date *</label>
+            <input
+              type="date"
+              formControlName="date"
+              [(ngModel)]="event.date"
+              id="date"
+            />
+            <div *ngIf="date.touched && date.errors">
+              <div class="error" *ngIf="date.errors.required">
+                * date is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="time">Time *</label>
+            <input
+              [(ngModel)]="event.time"
+              type="time"
+              id="date"
+              formControlName="time"
+            />
+            <div *ngIf="time.touched && time.errors">
+              <div class="error" *ngIf="time.errors.required">
+                * time is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group flex">
+          <label class="image-label" *ngIf="!image.value" for="image">
+            <div>
+              <div>
+                <i class="fas fa-image"></i>
+              </div>
+            </div>
+          </label>
+          <div *ngIf="imgUrl" class="preview">
+            <img [src]="imgUrl" alt="preview" />
+            <span (click)="removePreview()"><i class="fas fa-times"></i></span>
+          </div>
+          <input type="file" id="image" (change)="onImageSelect($event)" />
+        </div>
+        <div class="form-group">
+          <label for="name">Description *</label>
+          <textarea
+            type="text"
+            formControlName="description"
+            placeholder="Write events description"
+            [(ngModel)]="event.description"
+          ></textarea>
+          <div *ngIf="description.touched && description.errors">
+            <div class="error" *ngIf="description.errors.required">
+              * description is required
+            </div>
+            <div class="error" *ngIf="description.errors.minlength">
+              * description should be minimum
+              {{ description.errors.minlength.requiredLength }} character long
+            </div>
+          </div>
+        </div>
+        <button [disabled]="form.invalid" type="submit">Edit Event</button>
+      </form>
+    </div>
+  </div>
+</div>

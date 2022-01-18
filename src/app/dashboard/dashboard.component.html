@@ -1,0 +1,26 @@
+<div class="dashboard">
+  <div class="container">
+    <h1>Dashboard</h1>
+    <div class="grid">
+      <a
+        [routerLink]="['/events', event.id]"
+        *ngFor="let event of events"
+        class="event"
+      >
+        <img [src]="imgUrl(event.image)" [alt]="event.name" />
+        <div class="event-detail">
+          <h2 class="name">{{ event.name }}</h2>
+          <p class="description">{{ event.description | summary: 37 }}</p>
+
+          <div class="flex timestamp">
+            <p class="date">
+              <i class="far fa-calendar-alt"></i>
+              {{ event.date | date }}
+            </p>
+            <p class="time"><i class="far fa-clock"></i> {{ event.time }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

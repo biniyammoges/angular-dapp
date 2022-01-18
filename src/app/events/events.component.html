@@ -1,0 +1,26 @@
+<div class="events">
+  <div class="container grid">
+    <div *ngIf="loaderService.loading | async">
+      <h1>Loading...</h1>
+    </div>
+    <a
+      *ngFor="let event of events$ | async"
+      [routerLink]="['/events/', event.id]"
+      class="event"
+    >
+      <img [src]="imageUrl(event.image)" [alt]="event.name" />
+      <div class="event-detail">
+        <h2 class="name">{{ event.name }}</h2>
+        <p class="description">{{ event.description | summary: 37 }}</p>
+
+        <div class="flex timestamp">
+          <p class="date">
+            <i class="far fa-calendar-alt"></i>
+            {{ event.date | date }}
+          </p>
+          <p class="time"><i class="far fa-clock"></i> {{ event.time }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

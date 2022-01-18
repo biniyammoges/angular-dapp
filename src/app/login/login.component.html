@@ -1,0 +1,55 @@
+<div class="auth-form">
+  <div class="container flex">
+    <div class="form-container">
+      <h2>Login</h2>
+      <div
+        class="alert alert-warning"
+        *ngIf="form.errors && form.errors.invalidRequest"
+      >
+        {{ form.errors.invalidRequest.msg }}
+      </div>
+      <div
+        class="alert alert-warning"
+        *ngIf="form.errors && form.errors.badRequest"
+      ></div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            formControlName="email"
+            id="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <div *ngIf="email.touched && email.errors">
+            <div class="error" *ngIf="email.errors.required">
+              * email is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            id="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <div *ngIf="password.touched && password.errors">
+            <div class="error" *ngIf="password.errors.required">
+              * password is required
+            </div>
+            <div class="error" *ngIf="password.errors.minlength">
+              * password should be minimum
+              {{ password.errors.minlength.requiredLength }} character long
+            </div>
+          </div>
+        </div>
+        <button [disabled]="form.invalid" type="submit">Login</button>
+      </form>
+      <p>No account? <a routerLink="/register">Register</a></p>
+    </div>
+  </div>
+</div>

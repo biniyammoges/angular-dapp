@@ -1,0 +1,39 @@
+<header>
+  <div class="container flex">
+    <a class="navbrand" routerLink="/">Dapp</a>
+    <form
+      *ngIf="currentUser"
+      #form="ngForm"
+      class="search"
+      (ngSubmit)="submit(form)"
+    >
+      <input
+        #email="ngModel"
+        name="keyword"
+        ngModel
+        required
+        type="text"
+        placeholder="search event"
+      />
+      <button [disabled]="form.invalid" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+    <ul class="nav flex">
+      <li *ngIf="currentUser"><a routerLink="/dashboard">Dashboard</a></li>
+      <li *ngIf="currentUser"><a routerLink="/events/new">New </a></li>
+      <li *ngIf="currentUser">
+        <a routerLink="/profile">{{ currentUser.name }}</a>
+      </li>
+      <li *ngIf="!currentUser">
+        <a class="signin" routerLink="/login">Sign in</a>
+      </li>
+      <li *ngIf="!currentUser">
+        <a class="signup" routerLink="/register">Sign up</a>
+      </li>
+      <li *ngIf="currentUser">
+        <button routerLink="/" (click)="logout()" class="logout">Logout</button>
+      </li>
+    </ul>
+  </div>
+</header>
